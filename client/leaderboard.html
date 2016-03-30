@@ -1,0 +1,39 @@
+<head>
+    <title>LeadrBoard</title>
+</head>
+
+<body>
+    <h1 style="color: red">LeaderBoard</h1>
+
+    <div>
+        <form>
+            <input id="playerName" type="text">
+            <input type="submit">
+        </form>
+    </div>
+
+    <div>
+        {{>players}}
+    </div>
+
+</body>
+
+<template name="players">
+    <table>
+        <tr>
+            <td><b>Name</b></td>
+            <td><b>Score</b></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {{#each players}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{score}}</td>
+                <td><input class="increment" type="button" value="+"></td>
+                <td><input class="decrement" type="button" value="-"></td>
+                <td><a class="remove" href=" ">Remove</a></td>
+            </tr>
+        {{/each}}
+    </table>
+</template>
